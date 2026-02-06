@@ -1,0 +1,36 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+}
+
+.navbar .logo{
+    width: max(10%,80px);
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between profile and button */
+}
+
+
+.navbar .profile{
+    width: 40px;
+}
+
+.navbar button {
+    background-color: #ff4d4f;  /* bright red button */
+    color: white;               /* text color */
+    border: none;               /* remove default border */
+    padding: 6px 14px;          /* space inside button */
+    border-radius: 6px;         /* rounded corners */
+    cursor: pointer;            /* pointer on hover */
+    font-weight: bold;          /* bold text */
+    transition: background 0.3s ease; /* smooth hover effect */
+}
+
+.navbar button:hover {
+    background-color: #e63946; /* darker red on hover */
+}
