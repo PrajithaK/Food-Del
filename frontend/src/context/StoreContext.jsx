@@ -9,7 +9,7 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState("");
   const [search, setSearch] = useState(""); // ✅ SEARCH STATE
 
-  const url = "http://localhost:4000";
+  const url = "https://food-del-backend-w8mw.onrender.com";
 
   // ✅ Add to cart
   const addToCart = async (itemId) => {
