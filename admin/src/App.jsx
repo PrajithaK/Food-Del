@@ -9,7 +9,7 @@ import AdminLoginPopup from "./components/AdminLoginPopup/AdminLoginPopup.jsx";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
-  const url = "http://localhost:4000";
+  const url = "https://food-del-backend-w8mw.onrender.com";
   const [showLogin, setShowLogin] = useState(true);
 
   useEffect(() => {
