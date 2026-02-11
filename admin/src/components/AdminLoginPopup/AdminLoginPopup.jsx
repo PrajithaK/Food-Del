@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // <-- import useNavigate
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AdminLoginPopup.css";
 
-const AdminLoginPopup = ({ setShowLogin }) => {
-  const navigate = useNavigate(); // <-- initialize navigate
+const AdminLoginPopup = ({ setShowLogin, url }) => {
+  const navigate = useNavigate();
 
   const [data, setData] = useState({
     email: "",
@@ -20,21 +20,19 @@ const AdminLoginPopup = ({ setShowLogin }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/admin/login",
+        `${url}/api/admin/login`,
         data
       );
 
       if (res.data.success) {
         localStorage.setItem("adminToken", res.data.token);
         setShowLogin(false);
-
-        // Redirect to Add page
-        navigate("/orders"); // <-- redirect here
+        navigate("/orders");
       } else {
         alert(res.data.message);
       }
     } catch (error) {
-      console.error(error);
+      console.error("Login Error:", error);
       alert("Something went wrong");
     }
   };
